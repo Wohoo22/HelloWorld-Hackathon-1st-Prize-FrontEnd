@@ -1,38 +1,317 @@
 .App {
-  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Apercu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+/* Homepage */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.HomePage {
+  background-color: white;
+  z-index: 0;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
+}
+
+.HomePage .PagePartHome {
+  width: 80%;
+  margin: 0px 10%;
+}
+
+.HomePage .PagePartHome .title {
+  font-size: 1.5rem;
+  color: #150640;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+.HomePage .PagePartHome .BoxContainer {
+  width: 50%;
+  border: 2px solid #e7ecd8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.HomePage .PagePartHome .BoxContainer .TopBoxContainer {
+  display: flex;
+}
+.HomePage .PagePartHome .BoxContainer .TopBoxContainer .Topic {
+  font-size: 30px;
+  color: #150640;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+.HomePage .PagePartHome .BoxContainer .TopBoxContainer .progress {
+  width: 30%;
+
+  padding: 10px;
+}
+
+.HomePage .PagePartHome .BoxContainer .levels {
+  user-select: none;
+  background-color: #f6f5fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.HomePage .PagePartHome .BoxContainer .levels .started {
+  color: black;
+  font-weight: 500;
+}
+
+.HomePage .PagePartHome .BoxContainer .levels .started:hover {
+  color: #150640;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.HomePage .PagePartHome .BoxContainer .levels .Level {
+  display: grid;
+  grid-template-columns: 2rem 1fr 2fr;
+}
+
+/* Homepage */
+
+/* Nav-bar */
+.Nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  box-shadow: -1px 4px 6px 1px rgba(185, 185, 185, 0.16);
+  z-index: 3;
+  background-color: white;
+}
+
+.Nav-bar .logo {
+  padding-top: 10px;
+}
+
+.Nav-bar .Home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px 0px 10px;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #150640;
+}
+
+.Nav-bar .Home:hover {
+  background-color: #dedede;
+}
+
+.Nav-bar .None {
+  width: 50%;
+  margin-right: 20px;
+  height: 20px;
+}
+
+.Nav-bar .Profile {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav-bar .Profile .AvatarIcon {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5px;
+  position: relative;
+}
+
+.Nav-bar .Profile .AvatarIcon:hover {
+  background-color: #dedede;
+}
+
+.Nav-bar .Profile .dropdown-content {
+  position: absolute;
+  text-align: center;
+  display: none;
+  background-color: white;
+  min-width: 100px;
+  border-radius: 5px;
+  overflow: auto;
+  top: 45px;
+  margin-left: 50px;
+  z-index: 5;
+  box-shadow: 0px 4px 6px 3px rgba(185, 185, 185, 0.2);
+  flex-direction: column;
+  user-select: none;
+}
+
+.Nav-bar .Profile .show {
+  display: block;
+}
+
+.Nav-bar .Profile .dropdown-content > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Nav-bar .Profile .dropdown-content > div > a {
+  width: 130px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.Nav-bar .Profile .dropdown-content > div > a:hover {
+  background-color: #dedede;
+}
+/* Nav-bar */
+
+/* .PagePart */
+.PagePart {
+  background-color: white;
+  z-index: 0;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.PagePart .header {
+  height: 40px;
+  background-color: #ebe8e8;
+  padding: 10px 20px;
+  color: #150640;
+  font-weight: bold;
+}
+
+.PagePart .TutorialPart {
+  user-select: none;
+  height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.PagePart .TutorialPart .Text {
+  padding-top: 20px;
+  padding-left: 20px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.PagePart .CodeEditor {
+  padding-left: 20px;
+  height: 315px;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* .IntroductionPage */
+.IntroductionPage .PagePartIntro {
+  background-color: white;
+  z-index: 0;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+}
+
+.IntroductionPage .PagePartIntro .TutorialPartIntro {
+  height: 515px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.IntroductionPage .PagePartIntro .TutorialPartIntro .header {
+  height: 40px;
+  background-color: #ebe8e8;
+  padding: 10px 20px;
+  color: #150640;
+  font-weight: bold;
+}
+
+.IntroductionPage .PagePartIntro .TutorialPartIntro .Text {
+  padding-left: 20px;
+  padding-top: 10px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  padding-right: 20px;
+}
+
+/* .BottomPage */
+.BottomPage .ChangePagePart {
+  display: grid;
+  width: 100%;
+  height: 50px;
+  background: #150640;
+  background: linear-gradient(to right, #150640 0%, #230a6a 60%, #3a11b2 100%);
+  padding: 5px;
   color: white;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+  bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.BottomPage .ChangePagePart .LeftPart {
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.BottomPage .ChangePagePart .LeftPart img {
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.BottomPage .ChangePagePart .MiddlePart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.BottomPage .ChangePagePart .MiddlePart .ButtonControlPage {
+  padding: 5px 20px 5px 20px;
+
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.BottomPage .ChangePagePart .MiddlePart .Next {
+  color: #150640;
+  background-color: #f8d93c;
+  border: 1px solid #f8d93c;
+}
+
+.BottomPage .ChangePagePart .MiddlePart .Back {
+  color: white;
+  border: 1px solid #ffffff;
+}
+
+.BottomPage .ChangePagePart .MiddlePart .Back:hover {
+  background-color: white;
+  color: #150640;
+}
+
+/* .BottomPage */
+
+.Map .block {
+  width: 45px;
+  height: 45px;
+  background-color: red;
+  border: 1px solid black;
+}
+
+.Map .row {
+  display: flex;
 }
