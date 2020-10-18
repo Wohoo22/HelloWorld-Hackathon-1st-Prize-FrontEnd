@@ -19,10 +19,10 @@ lavaImg.src = "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-a
 let woodImg = new Image()
 woodImg.src = 'https://i.pinimg.com/originals/fe/61/ba/fe61ba11b7e110e23b9a94e018e2626a.jpg'
 let doorImg = new Image()
-doorImg.src = 'https://cdn.imgbin.com/5/11/3/imgbin-window-trapdoor-trapping-fossil-k08d7bShF3a38x5HWeyyYaT9s.jpg'
+doorImg.src = 'https://i.ibb.co/qFWZgVH/Pics-Art-10-18-11-25-08.jpg'
 
-document.getElementById('addJsButtons').innerHTML += "<button onclick='generate()'>Generate</button>"
-document.getElementById('addJsButtons').innerHTML += "<button onclick='sendCode()'>Send code</button>"
+
+document.getElementById('addJsButtons').innerHTML += "<button onclick='sendCode()' type=`button` class='btn btn-primary'>Send code</button>"
 
 function drawMap() {
   ctx.drawImage(lavaImg, 0, 0, 1200, 1200)
@@ -55,7 +55,7 @@ function drawAllMap(sizeMap, rightPaths, fooPoints, momPoints) {
   }
 }
 function generate() {
-  axios.get("http://4c7052e54d9b.ngrok.io/map/generate-big?size=21&hasMom=false").then((res) => {
+  axios.get("https://4c7052e54d9b.ngrok.io/map/generate-big?size=21&hasMom=false").then((res) => {
     c.width = sizeMap.value * 60 + 60
     c.height = sizeMap.value * 60 + 60
     rightPath = res.data.rightPoints
@@ -75,7 +75,7 @@ function generate() {
   })
 }
 
-axios.get('http://4c7052e54d9b.ngrok.io/map/generate-big?size=21&hasMom=false').then((res) => {
+axios.get('https://4c7052e54d9b.ngrok.io/map/generate-big?size=21&hasMom=false').then((res) => {
   map = res.data
   console.log(res.data);
   rightPath = res.data.rightPoints
@@ -95,7 +95,7 @@ async function sendCode() {
   let result = null
   let stepUser = convertCodeDataToUserStep(codeData)
   await $.ajax({
-    url: "http://4c7052e54d9b.ngrok.io/map/check-big",
+    url: "https://4c7052e54d9b.ngrok.io/map/check-big",
     type: "post",
     dataType: "json",
     contentType: 'application/json',
