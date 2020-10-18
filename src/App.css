@@ -256,8 +256,6 @@
   padding: 5px;
   color: white;
   grid-template-columns: 1fr 1fr 1fr;
-  position: fixed;
-  bottom: 0;
 }
 
 .BottomPage .ChangePagePart .LeftPart {
@@ -314,4 +312,10 @@
 
 .Map .row {
   display: flex;
+}
+
+.FinalPage .PagePart {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  align-items: center;
 }

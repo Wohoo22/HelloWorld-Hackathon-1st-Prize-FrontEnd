@@ -21,8 +21,8 @@ woodImg.src = 'https://i.pinimg.com/originals/fe/61/ba/fe61ba11b7e110e23b9a94e01
 let doorImg = new Image()
 doorImg.src = 'https://cdn.imgbin.com/5/11/3/imgbin-window-trapdoor-trapping-fossil-k08d7bShF3a38x5HWeyyYaT9s.jpg'
 
-// document.getElementsByClassName('Leftpart')[0].innerHTML += "<button onclick='generate()'>Generate</button>"
-// document.getElementsByClassName('Leftpart')[0].innerHTML += "<button onclick='sendCode()'>Send code</button>"
+document.getElementById('addJsButtons').innerHTML += "<button onclick='generate()'>Generate</button>"
+document.getElementById('addJsButtons').innerHTML += "<button onclick='sendCode()'>Send code</button>"
 
 
 function drawMap() {
@@ -56,7 +56,7 @@ function drawAllMap(sizeMap,rightPaths,fooPoints,momPoints){
   }
 }
 function generate() {
-  axios.get("http://4c7052e54d9b.ngrok.io/map/generate?size=${sizeMap.value}").then((res) => {
+  axios.get("http://4c7052e54d9b.ngrok.io/map/generate?size=12").then((res) => {
     c.width = sizeMap.value * 60 + 60
     c.height = sizeMap.value * 60 + 60
     rightPath = res.data.rightPoints
@@ -138,7 +138,7 @@ async function sendCode(){
           clearInterval(interval)
         };
         count++;
-    }, 50)   
+    }, 200)   
 }
 function checkPosition(momPoint,stepUser){
   let isTrue = false

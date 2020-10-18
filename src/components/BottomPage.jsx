@@ -45,7 +45,7 @@ const BottomPage = () => {
                     <div className="ButtonControlPage Next">Next</div>
                     </Link>
                 </div>
-                <div className="RightPart"></div>
+                <div className="RightPart" id="addJsButtons"></div>
             </div> 
         </div>
     )
