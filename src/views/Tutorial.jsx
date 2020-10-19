@@ -25,11 +25,23 @@ const Tutorial = () => {
             .log() method. When we write console.log() what we put inside the
             parentheses will get printed, or logged, to the console.
           </p>
-
           <p>
             It’s going to be very useful for us to print values to the console,
             so we can see the work that we’re doing.
           </p>
+          <p>
+            Use "console.log()" to move the green boy, save your blue children,
+            and remember to avoid the red impostors.
+          </p>
+          <p>Commands:</p>
+          <p>> console.log("up"); </p>
+          <p>> console.log("down"); </p>
+          <p>> console.log("right"); </p>
+          <p>> console.log("left"); </p>
+          <p>> console.log("jump-up"); </p>
+          <p>> console.log("jump-down"); </p>
+          <p>> console.log("jump-right"); </p>
+          <p>> console.log("jump-left"); </p>
         </div>
       )}
       {parseInt(levelid) === 2 && (
@@ -45,18 +57,14 @@ const Tutorial = () => {
             Number: Any number, including numbers with decimals: 4, 8, 1516,
             23.42. String: Any grouping of characters on your keyboard (letters,
             numbers, spaces, symbols, etc.) surrounded by single quotes: ' ... '
-            or double quotes " ... ". Though we prefer single quotes. Some
-            people like to think of string as a fancy word for text. Boolean:
-            This data type only has two possible values— either true or false
-            (without quotes). It’s helpful to think of booleans as on and off
-            switches or as the answers to a “yes” or “no” question. Null: This
-            data type represents the intentional absence of a value, and is
-            represented by the keyword null (without quotes). Undefined: This
-            data type is denoted by the keyword undefined (without quotes). It
-            also represents the absence of a value though it has a different use
-            than null. Symbol: A newer feature to the language, symbols are
-            unique identifiers, useful in more complex coding. No need to worry
-            about these for now. Object: Collections of related data.
+            or double quotes " ... ". Boolean: This data type only has two
+            possible values— either true or false (without quotes). Null: This
+            data type represents the intentional absence of a value. Undefined:
+            This data type is denoted by the keyword undefined (without quotes).
+            It also represents the absence of a value though it has a different
+            use than null. Symbol: A newer feature to the language, symbols are
+            unique identifiers, useful in more complex coding. Object:
+            Collections of related data.
           </p>
           <p>
             The first 6 of those types are considered primitive data types. They
@@ -67,6 +75,20 @@ const Tutorial = () => {
             once you start leveraging each one. As you learn more about objects,
             you’ll be able to create complex collections of data.
           </p>
+          <p>
+            Create string varibles for each move, then log those varible to move
+            the green boy, save your blue children, and remember to avoid the
+            red impostors.
+          </p>
+          <p>Commands:</p>
+          <p>> console.log("up"); </p>
+          <p>> console.log("down"); </p>
+          <p>> console.log("right"); </p>
+          <p>> console.log("left"); </p>
+          <p>> console.log("jump-up"); </p>
+          <p>> console.log("jump-down"); </p>
+          <p>> console.log("jump-right"); </p>
+          <p>> console.log("jump-left"); </p>
         </div>
       )}
       {parseInt(levelid) === 3 && (
@@ -83,9 +105,48 @@ const Tutorial = () => {
             the two succeeding statements, and increments i by 1 after each pass
             through the loop.
           </p>
+          <p>
+            Use for loops to run multiple commands in a row, move the green boy,
+            save your blue children, and remember to avoid the red impostors.
+          </p>
+          <p>Commands:</p>
+          <p>> console.log("up"); </p>
+          <p>> console.log("down"); </p>
+          <p>> console.log("right"); </p>
+          <p>> console.log("left"); </p>
+          <p>> console.log("jump-up"); </p>
+          <p>> console.log("jump-down"); </p>
+          <p>> console.log("jump-right"); </p>
+          <p>> console.log("jump-left"); </p>
         </div>
       )}
       {parseInt(levelid) === 4 && (
+        <div>
+          <p>
+            The while loop loops through a block of code as long as a specified
+            condition is true.
+          </p>
+          <p>
+            Remember to specified a limit or you will fall into a infinity loop
+            forever till you die;
+          </p>
+          <p>
+            Use while loops to run multiple commands in a row, move the green
+            boy, save your blue children, and remember to avoid the red
+            impostors.
+          </p>
+          <p>Commands:</p>
+          <p>> console.log("up"); </p>
+          <p>> console.log("down"); </p>
+          <p>> console.log("right"); </p>
+          <p>> console.log("left"); </p>
+          <p>> console.log("jump-up"); </p>
+          <p>> console.log("jump-down"); </p>
+          <p>> console.log("jump-right"); </p>
+          <p>> console.log("jump-left"); </p>
+        </div>
+      )}
+      {parseInt(levelid) === 5 && (
         <div>
           <p>
             Arrays are list-like objects whose prototype has methods to perform
@@ -108,9 +169,23 @@ const Tutorial = () => {
             separate, and the array's traversal and mutation operations cannot
             be applied to these named properties.
           </p>
+          <p>
+            Use array to list your moves, then use loops to run your commands,
+            move the green boy, save your blue children, and remember to avoid
+            the red impostors.
+          </p>
+          <p>Commands:</p>
+          <p>> console.log("up"); </p>
+          <p>> console.log("down"); </p>
+          <p>> console.log("right"); </p>
+          <p>> console.log("left"); </p>
+          <p>> console.log("jump-up"); </p>
+          <p>> console.log("jump-down"); </p>
+          <p>> console.log("jump-right"); </p>
+          <p>> console.log("jump-left"); </p>
         </div>
       )}
-      {parseInt(levelid) === 5 && (
+      {parseInt(levelid) === 6 && (
         <div>
           <p>
             Functions are one of the fundamental building blocks in JavaScript.
@@ -123,7 +198,7 @@ const Tutorial = () => {
           </p>
         </div>
       )}
-      {parseInt(levelid) === 6 && (
+      {parseInt(levelid) === 7 && (
         <div>
           <p>
             A switch statement first evaluates its expression. It then looks for

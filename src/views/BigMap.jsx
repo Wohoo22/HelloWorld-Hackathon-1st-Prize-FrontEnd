@@ -15,8 +15,8 @@ class BigMap extends React.Component {
       <div>
         <canvas
           id="myCanvas2"
-          height={1200}
-          width={1200}
+          height={1400}
+          width={1400}
           style={{ overflowX: "auto" }}
         ></canvas>
       </div>

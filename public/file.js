@@ -10,7 +10,7 @@ let map = {}
 let queen = new Image()
 queen.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b1ceee5-9458-4434-80bc-fc5d83a2ea88/de5g6u1-de580faf-a210-480e-a49c-0f297b178fd1.png/v1/fill/w_587,h_744,strp/among_us_character__9__by_unitedworldmedia_de5g6u1-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03NDQiLCJwYXRoIjoiXC9mXC80YjFjZWVlNS05NDU4LTQ0MzQtODBiYy1mYzVkODNhMmVhODhcL2RlNWc2dTEtZGU1ODBmYWYtYTIxMC00ODBlLWE0OWMtMGYyOTdiMTc4ZmQxLnBuZyIsIndpZHRoIjoiPD01ODcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Cs-DhypaQAiJoDEjYcoRr3_3CmUibtGbOF7IgAJ_1HY'
 let spiderImg = new Image();
-spiderImg.src = "https://images.vexels.com/media/users/3/145049/isolated/preview/073526cb66d7dfb492446c99dc294823-monster-face-fish-illustration-by-vexels.png";
+spiderImg.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/855806ca-eddc-4f3a-8516-223d5cdbaac1/de5xn1r-1653a984-0534-4e66-a92f-abec6263c076.png/v1/fill/w_802,h_996,strp/kadi_in_among_us_by_kadiandsonic_de5xn1r-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTk1IiwicGF0aCI6IlwvZlwvODU1ODA2Y2EtZWRkYy00ZjNhLTg1MTYtMjIzZDVjZGJhYWMxXC9kZTV4bjFyLTE2NTNhOTg0LTA1MzQtNGU2Ni1hOTJmLWFiZWM2MjYzYzA3Ni5wbmciLCJ3aWR0aCI6Ijw9OTYzIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Z0GBCPCioicoKKWZor7K63UG9V3Y62m999rU1Inz22U";
 let knightImg = new Image();
 knightImg.src =
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b1ceee5-9458-4434-80bc-fc5d83a2ea88/de5dkfo-361fa49d-4f48-432b-a55d-c9dad5fc5055.png/v1/fill/w_587,h_744,strp/among_us_character__8__by_unitedworldmedia_de5dkfo-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03NDQiLCJwYXRoIjoiXC9mXC80YjFjZWVlNS05NDU4LTQ0MzQtODBiYy1mYzVkODNhMmVhODhcL2RlNWRrZm8tMzYxZmE0OWQtNGY0OC00MzJiLWE1NWQtYzlkYWQ1ZmM1MDU1LnBuZyIsIndpZHRoIjoiPD01ODcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.GmJU2lIgNokx71OTZC_1-YOoSS93vNu6WQZJskH0ync";
@@ -20,10 +20,10 @@ let woodImg = new Image()
 woodImg.src = 'https://i.pinimg.com/originals/fe/61/ba/fe61ba11b7e110e23b9a94e018e2626a.jpg'
 let doorImg = new Image()
 doorImg.src = 'https://i.ibb.co/qFWZgVH/Pics-Art-10-18-11-25-08.jpg'
+let ngrok = "cd8e4af83b69";
 
-
-document.getElementById('addJsButtons').innerHTML += "<button onclick='sendCode()' type=`button` class='btn btn-primary'>Send code</button>"
-
+document.getElementById('addJsButtons').innerHTML += "<button onclick='sendCode()' type=`button` class='btn btn-primary'>Run code</button>"
+document.getElementById('addJsButtons').innerHTML += "<button onclick='location.reload()' type=`button` class='btn btn-success'>New map</button>"
 
 function drawMap() {
   ctx.drawImage(lavaImg,0,0,600,600)
@@ -56,7 +56,7 @@ function drawAllMap(sizeMap,rightPaths,fooPoints,momPoints){
   }
 }
 function generate() {
-  axios.get("https://4c7052e54d9b.ngrok.io/map/generate?size=12").then((res) => {
+  axios.get("https://"+ ngrok + ".ngrok.io/map/generate?size=9").then((res) => {
     c.width = sizeMap.value * 60 + 60
     c.height = sizeMap.value * 60 + 60
     rightPath = res.data.rightPoints
@@ -71,12 +71,12 @@ function generate() {
     spiderImgPosition = res.data.monster
     drawAllMap(sizeMap.value,rightPath,fooPoints,map.momPoints)
     drawImg(knightImgPosition.x, knightImgPosition.y, 55, knightImg);
-    console.log(endPoint);
+    console.log("endPoint" + endPoint);
     drawRect(endPoint[0] * 60, endPoint[1] * 60, 'end')
   })
 }
 
-axios.get('https://4c7052e54d9b.ngrok.io/map/generate?size=12').then((res) => {
+axios.get('https://'+ ngrok + '.ngrok.io/map/generate?size=9').then((res) => {
     map = res.data
     console.log(res.data);
     rightPath = res.data.rightPoints
@@ -86,6 +86,7 @@ axios.get('https://4c7052e54d9b.ngrok.io/map/generate?size=12').then((res) => {
         y:res.data.startPoint[1]
     }
     endPoint = rightPath[rightPath.length-1]
+    console.log("endPoint: "  + endPoint);
     spiderImgPosition = res.data.monster
     drawAllMap(9,rightPath,fooPoints,map.momPoints)
     drawImg(knightImgPosition.x, knightImgPosition.y, 50, knightImg);
@@ -96,7 +97,7 @@ async function sendCode(){
   let result = null
   let stepUser = convertCodeDataToUserStep(codeData)
    await $.ajax({
-        url : "https://4c7052e54d9b.ngrok.io/map/check",
+        url : "https://"+ ngrok + ".ngrok.io/map/check",
         type : "post",
         dataType:"json",
         contentType:'application/json',
@@ -129,10 +130,10 @@ async function sendCode(){
         drawAllMap(map.size,map.rightPoints,map.fooPoints,map.momPoints)
         drawRect(endPoint[0] * 60, endPoint[1] * 60, 'end')
         ctx.drawImage(knightImg, stepUser[count][0] * 60, stepUser[count][1] * 60, 50, 50);
-        if((checkPosition(map.monster,stepUser[count]).isTrue)) {
-          alert('you dead')
+        if(count >= result.dieAtStep-1){
+          alert(result.dieReason);
           clearInterval(interval);
-        };
+        }
         if(count >= stepUser.length-1) {
           if(result.status === 'DONE') alert('win')
           clearInterval(interval)

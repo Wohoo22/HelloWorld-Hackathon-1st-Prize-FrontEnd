@@ -32,26 +32,38 @@ const FinalPage = () => {
         >
           <BigMap></BigMap>
         </div>
-
-        <div className="CodeEditor">
-          <textarea
-            defaultValue={value}
-            style={{ width: "0px", height: "0px" }}
-            id="codeInput"
-          ></textarea>
-          <CodeMirror
-            value={value}
-            options={{
-              mode: "jsx",
-              theme: "material",
-              lineNumbers: 30,
-            }}
-            onChange={(editor, data, value) => {
-              console.log(value, data);
-              setValue(value);
-              console.log(value);
-            }}
-          />
+        <div>
+          <div className="Tutorial" style={{ textAlign: "center" }}>
+            <span>
+              <p>We provide you 2 functions:</p>
+              <p>
+                + alertNextMove(yourNextMove) - return if there is impostor or
+                fall point in your next move. Example:
+                "safe","monster-up","fall-left","monster-jump-right", ...
+              </p>
+              <p>+ isGoal() - return boolean if you have reached the door</p>
+            </span>
+          </div>
+          <div className="CodeEditor">
+            <textarea
+              defaultValue={value}
+              style={{ width: "0px", height: "0px" }}
+              id="codeInput"
+            ></textarea>
+            <CodeMirror
+              value={value}
+              options={{
+                mode: "jsx",
+                theme: "material",
+                lineNumbers: 30,
+              }}
+              onChange={(editor, data, value) => {
+                console.log(value, data);
+                setValue(value);
+                console.log(value);
+              }}
+            />
+          </div>
         </div>
       </div>
       <BottomPage></BottomPage>
