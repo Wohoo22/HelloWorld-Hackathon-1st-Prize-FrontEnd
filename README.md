@@ -1,3 +1,5 @@
+# This is a part of another repository, check it out for any further informations: https://github.com/Wohoo22/HelloWorld-Hackathon-1st-Prize
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
